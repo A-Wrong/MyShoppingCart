@@ -12,9 +12,8 @@ My Shopping Cart is a model of e-commerce website created by using django framew
 4) Verify the Installation (python -m django --version)   
 It will show the django version if successfully installed
 5) Download and save the project in local storage
-6) Go to project directory in powershell
-7) cd mac
-8) Run command (python manage.py runserver)   
+6) Navigate to project directory in powershell
+7) Run command (python manage.py runserver)   
 It will start the server at http://127.0.0.1:8000/  (open in browser)
-9) Go to shop.
+8) Go to shop
 
