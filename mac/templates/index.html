@@ -1,29 +1,138 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!DOCTYPE html>
+<html>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+	<style>
+		*{
+		 margin: 0; padding: 0; box-sizing: border-box;
+		 transition:background 0.3s linear;
+		 font-family: 'Oswald', sans-serif;
+		}
+		
+		@font-face{
+		 font-family: chinafont;
+		 src:url(china.ttf);
+		}
+		
+		.logo h1{
+		font-family: chinafont;
+		transition:color 0.5s linear;
+		}
+		
+		.logo h1:hover{
+		 color: red;
+		}
+		
+		
+		.main-content{
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: -1;
+		}
+		
+		.leftside{
+		
+		 width: 100%; height: 100vh;
+		 background: linear-gradient(57deg, #00C6A7 , #1E4D92 );
+		}
+		.leftside img{
+		margin-top:20%;
+		margin-left:5%;
+		position:absolute; width:80%; height:80%;
+		}
+		
+		  .rightside{
+		 background: #000;
+		}
+		
+		.right-content h1{
+		 font-size: 35px;
+		 font-weight: 400;
+		 letter-spacing: 0.06em;
+		 line-height: 1.25;
+		 padding: 30px 0 35px 0;
+		}
+		
+		.right-content p{
+		 border-left: 1px solid #555;
+		 font-weight: 100;
+		 font-family: 'Raleway', sans-serif;
+		 padding: 50px 30px;
+		 font-size: 0.9em;
+		
+		}
+		
+		button{
+		 border:none;
+		 background: #fff;
+		 letter-spacing: 0.25em;
+		 font-weight: 700;
+		 font-size: 10px;
+		 text-transform: uppercase;
+		 color: #111;
+		 padding: 15px 25px;
+		 margin: 30px 0 0 30px;
+		 transition: all 0.3s linear;
+		
+		}
+		
+		button:hover{
+		 background: rgba(255,0,0,0.7);
+		 color: white;
+		
+		}
+		.right-content h1{
+		margin-top:20%;
+		}
+		
+		.row li a{
+		text-decoration: none;
+		color:white;
+		}
+		
+		.row li a:hover{
+		 color: rgba(255,0,0,1);
+		 cursor: pointer;
+	</style>
+</head>
 
-    <title>Welcome to My Shopping Cart</title>
-  </head>
-  <body>
-   <div class="jumbotron">
-  <h1 class="display-4">Welcome to My Shopping Cart</h1>
-  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-  <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  <a class="btn btn-primary btn-lg" href="/shop" role="button">Go To Shop</a>
-  <a class="btn btn-primary btn-lg" href="/blog" role="button">Go To Blog</a>
-</div>
+<body>
+	<div class="container-fluid text-white">
+		<nav class="row py-4">
+			<div class="col-lg-6 col-md-6 col-12  logo">
+				<h1> MyShoppingCart </h1>
+			</div>
+			<div class="col-lg-6 col-md-6 col-12  ">
+				<ul class="d-flex  justify-content-around align-items-center list-unstyled text-uppercase">
+					<li><a href="/shop/tracker"> track </a>
+					</li>
+					<li><a href="/shop/about"> about </a>
+					</li>
+					<li><a href="/shop/contact"> contact </a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="row main-content ">
+			<div class="col-md-6 col-12 leftside">
+				<img src="http://pngriver.com/wp-content/uploads/2018/04/Download-Shopping-Free-PNG-Image.png">
+			</div>
+			<div class="col-md-6 col-12 rightside d-flex justify-content-center align-items-center">
+				<div class="right-content w-50 ">
+					<h1>THERE IS BEAUTY <br> IN SIMPLICITY</h1>
+					<p>My Shopping Cart is a model of e-commerce website created by using django framework. This site has ability to add items to cart, remove items from cart, search products, place order, track order based on order no. and email id. It is in developmental phase and still few things need to be corrected and added.</p>
+					<button onclick="window.location.href = '/shop';">Start Shopping</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
 </html>
