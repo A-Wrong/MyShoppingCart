@@ -4,23 +4,24 @@
 
 <div class="container">
     <div class="col my-4">
-        <h2>Step 1 - My Shopping Cart Express Checkout - Review Your Cart Items</h2>
+        <h2 class="alert alert-success">Express Checkout - Review Your Cart Items</h2>
         <div class="my-4">
             <ul class="list-group" id="items">
             </ul>
-            <nav aria-label="breadcrumb">
-  <ol class="breadcrumb mt-3">
+            <nav aria-label="breadcrumb col-12">
+  <ol class="breadcrumb mt-3 float-right">
       <div class="breadcrumb-item active" aria-current="page"><b>Total Cart Value : Rs. <span id="totalPrice"></span></b></li>
   </ol>
 </nav>
 
         </div>
     </div>
-    <div class="col my-4">
-        <h2>Step 2 - Enter Address & Other Details:</h2>
+    <br>
+    <div class="col my-4 alert alert-danger">
+        
         <form method="post" action="/shop/checkout/">{% csrf_token %}
             <input type="hidden" name="itemsJson" id="itemsJson">
-            <div class="form-row">
+            <div class="form-row mt-3">
                 <div class="form-group col-md-6">
                     <label for="inputname">Name</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
@@ -87,8 +88,9 @@ if ($.isEmptyObject(cart)) {
         sum = sum + qty;
         totalPrice = totalPrice + qty* itemPrice
         mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
-                    ${name}
-                    <span class="badge badge-primary badge-pill">${qty}</span>
+                   <span class="badge badge-primary badge-pill">${qty} units</span>
+                    <span class="badge badge-warning badge-pill">${name}</span>
+                    <span class="badge badge-success badge-pill">Rs. ${qty*itemPrice}</span>
                 </li>`
         $('#items').append(mystr);
     }
