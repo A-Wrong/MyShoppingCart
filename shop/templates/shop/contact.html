@@ -48,7 +48,6 @@ cart = JSON.parse(localStorage.getItem('cart'));
 document.getElementById('cart').innerHTML = Object.keys(cart).length;
 }
 $('.cart').click(function(){
-console.log('clicked');
 var idstr = this.id.toString();
 
 if (cart[idstr] !=undefined){
