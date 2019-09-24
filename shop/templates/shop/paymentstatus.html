@@ -2,14 +2,37 @@
 {% block title%} My Shopping Cart Tracker{% endblock %}
 {% block body %}
 <div class="container">
-    {{response}}
+   <!-- {{response}}  -->
     <div class="col my-4">
+        <h2 class="alert alert-success">Status for your Order Id : {{response.ORDERID}}</h2>
+        <br>
 
-        <h2>Payment status regarding your order Id {{response.ORDERID}}</h2>
         {% if response.RESPCODE == '01' %}
-        ORDER SUCCESS
+
+        <div class="jumbotron">
+            <h1 class="display-4">PAYMENT SUCCESS</h1>
+
+            <hr class="my-4">
+                <p><b> Date : </b> {{response.TXNDATE}} </p>
+                <p><b> Txn Id : </b> {{response.TXNID}} </p>
+                <p><b> Bank Txn Id : </b> {{response.BANKTXNID}} </p>
+                <p><b> Amount : </b> {{response.TXNAMOUNT}}</p>
+            <a class="btn btn-primary btn-lg" href="/shop/tracker" role="button">Track Your Order</a>
+        </div>
+
         {% else %}
-        ORDER FAILURE
+        <div class="jumbotron">
+            <h1 class="display-4">PAYMENT FAILED ( ORDER CONVERTED TO COD )</h1>
+                <p class="lead">Aww...Your Payment Failed. Now it will be processed as Cash on Delivery.</p>
+            <hr class="my-4">
+                <p><b> Date : </b> {{response.TXNDATE}} </p>
+                <p><b> Txn Id : </b> {{response.TXNID}} </p>
+                <p><b> Bank Txn Id : </b> {{response.BANKTXNID}} </p>
+                <p><b> Amount : </b> {{response.TXNAMOUNT}}</p>
+            <a class="btn btn-primary btn-lg" href="/shop/tracker" role="button">Track Your Order</a>
+        </div>
+        
+
         {% endif%}
 
     </div>
