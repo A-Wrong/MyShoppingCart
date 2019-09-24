@@ -17,3 +17,12 @@ It will show the django version if successfully installed
 It will start the server at http://127.0.0.1:8000/  (open in browser)
 8) Go to shop
 
+### Update
+
+1. Install pycryptodome dependency ( pip install pycryptodome )
+
+### Django Admin (Steps for Creation)
+
+1. python manage.py createsuperuser
+2. Enter userId, email and password
+3. Now go to - http://127.0.0.1:8000/admin
