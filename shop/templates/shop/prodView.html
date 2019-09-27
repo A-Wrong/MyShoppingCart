@@ -15,7 +15,7 @@
 
     </div>
 
-    <div class="col-md-8">
+    <div class="col-md-8 mt-4">
         <h5>{{product.product_name}}</h5>
         <p><b>Rs.{{product.price}} </b></p>
         <p>{{product.desc}}</p>
@@ -37,21 +37,22 @@ var cart = {};
 else
 {
 cart = JSON.parse(localStorage.getItem('cart'));
-document.getElementById('cart').innerHTML = Object.keys(cart).length;
+updateCart(cart);
 }
-$('.cart').click(function(){
-var idstr = this.id.toString();
-if (cart[idstr] !=undefined){
-cart[idstr] = cart[idstr] + 1;
-}
-else
-{
-cart[idstr] = 1;
-}
-localStorage.setItem('cart', JSON.stringify(cart));
-document.getElementById('cart').innerHTML = Object.keys(cart).length;
-});
+
+
 $('#popcart').popover();
 document.getElementById("popcart").setAttribute('data-content', '<h5>Cart for your items in my shopping cart</h5>');
+
+
+function updateCart(cart) {
+    var sum = 0;
+    for (var item in cart) {
+        sum = sum + cart[item][0];
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    document.getElementById('cart').innerHTML = sum;
+}
+
 </script>
 {% endblock %}
