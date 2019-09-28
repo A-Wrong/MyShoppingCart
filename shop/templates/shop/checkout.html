@@ -9,6 +9,7 @@
             <ul class="list-group" id="items">
             </ul>
             <nav aria-label="breadcrumb col-12">
+            	<button class='btn btn-dark mt-3' id ='clearCart'>Clear Cart</button>
   <ol class="breadcrumb mt-3 float-right">
       <div class="breadcrumb-item active" aria-current="page"><b>Total Cart Value : Rs. <span id="totalPrice"></span></b></li>
   </ol>
@@ -87,7 +88,7 @@ if ($.isEmptyObject(cart)) {
         let qty = cart[item][0];
         let itemPrice = cart[item][2];
         sum = sum + qty;
-        totalPrice = totalPrice + qty* itemPrice
+        totalPrice = totalPrice + qty* itemPrice;
         mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
                    <span class="badge badge-primary badge-pill">${qty} units</span>
                     <span class="badge badge-warning badge-pill">${name}</span>
@@ -99,6 +100,13 @@ if ($.isEmptyObject(cart)) {
 document.getElementById('cart').innerHTML = sum;
 document.getElementById('totalPrice').innerHTML = totalPrice;
 $('#itemsJson').val(JSON.stringify(cart));
+
+//To clear cart
+
+$('#clearCart').click(function(){
+ localStorage.clear();
+document.location = "/shop/checkout";
+});
 
 {% if thank %}
 

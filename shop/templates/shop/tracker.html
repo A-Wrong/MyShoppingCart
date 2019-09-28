@@ -95,5 +95,31 @@ $('#trackerForm').submit(function(event) {
     event.preventDefault();
 });
 
+// Find out the cart items from localStorage
+
+if(localStorage.getItem('cart') == null){
+var cart = {};
+}
+else
+{
+cart = JSON.parse(localStorage.getItem('cart'));
+updateCart(cart);
+}
+
+function updateCart(cart) {
+    var sum = 0;
+    for (var item in cart) {
+        sum = sum + cart[item][0];
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    document.getElementById('cart').innerHTML = sum;
+}
+
+
+$('#popcart').click(function(){
+document.location = "/shop/checkout";
+});
+
+
 			</script>
 {% endblock %}
